@@ -1,0 +1,68 @@
+{
+  "classificacao_sentimento": [
+    {
+      "input": "Notebook excelente! Tela linda, rápido e leve. Melhor compra que já fiz na TechStore.",
+      "esperado": "POSITIVO"
+    },
+    {
+      "input": "Produto veio com defeito, a tela tem pixels mortos e o suporte não resolve. Péssima experiência.",
+      "esperado": "NEGATIVO"
+    },
+    {
+      "input": "O design é bonito e a tela é boa, mas esquenta muito e a bateria dura só 2 horas. Em dúvida se valeu.",
+      "esperado": "MISTO"
+    },
+    {
+      "input": "Faz o que promete, nada excepcional. Produto mediano pelo preço cobrado.",
+      "esperado": "NEUTRO"
+    },
+    {
+      "input": "Comprei para meu filho e ele adorou! Entrega rápida, embalagem impecável. Super recomendo!",
+      "esperado": "POSITIVO"
+    }
+  ],
+  "extracao_reclamacao": [
+    {
+      "input": "O Notebook Dell Inspiron de R$3.500 veio com pixels mortos na tela. Preciso de troca urgente!",
+      "esperado": {"produto": "Notebook Dell Inspiron", "preco": "R$3.500", "defeito": "pixels mortos", "urgencia": "alta"}
+    },
+    {
+      "input": "Fone JBL Tune 510 de R$199 parou de funcionar em 3 dias. Botão de volume travou.",
+      "esperado": {"produto": "Fone JBL Tune 510", "preco": "R$199", "defeito": "parou de funcionar", "urgencia": "media"}
+    },
+    {
+      "input": "A Cafeteira Nespresso Vertuo de R$899 vaza água pela base. Péssimo acabamento!",
+      "esperado": {"produto": "Cafeteira Nespresso Vertuo", "preco": "R$899", "defeito": "vaza água", "urgencia": "media"}
+    },
+    {
+      "input": "Smartphone Samsung A54 por R$1.800 — bateria não dura nem 4 horas. Decepcionante.",
+      "esperado": {"produto": "Smartphone Samsung A54", "preco": "R$1.800", "defeito": "bateria fraca", "urgencia": "media"}
+    },
+    {
+      "input": "Tênis Nike Air Max custou R$650 e a sola descolou na primeira caminhada. Quero reembolso AGORA!",
+      "esperado": {"produto": "Tênis Nike Air Max", "preco": "R$650", "defeito": "sola descolou", "urgencia": "alta"}
+    }
+  ],
+  "geracao_descricao": [
+    {
+      "input": "Notebook ProMax X15, Intel Core i7-13700H, 16GB DDR5, 512GB SSD NVMe, Tela 15.6 FHD IPS 144Hz, NVIDIA RTX 4060, 72Wh bateria, 1.8kg, R$5.499",
+      "esperado": "descricao_atrativa"
+    },
+    {
+      "input": "Smart TV Samsung 55 polegadas 4K, HDR10+, Tizen OS, 3 HDMI, Wi-Fi 6, Bluetooth 5.2, R$2.800",
+      "esperado": "descricao_atrativa"
+    },
+    {
+      "input": "Fone Bluetooth Sony WH-1000XM5, Cancelamento de Ruído Ativo, 30h bateria, LDAC, 250g, R$1.899",
+      "esperado": "descricao_atrativa"
+    },
+    {
+      "input": "Mouse Logitech MX Master 3S, 8000 DPI, USB-C, Bluetooth, 3 dispositivos, silencioso, R$599",
+      "esperado": "descricao_atrativa"
+    },
+    {
+      "input": "Cadeira Gamer ThunderX3 EC3, reclinável 180 graus, apoio lombar, braço 4D, suporta 150kg, R$1.299",
+      "esperado": "descricao_atrativa"
+    }
+  ]
+}
