@@ -4,7 +4,7 @@
 **Instituição:** FIAP — Ciência da Computação 2026  
 **Professor:** Jorge Luiz Gomes  
 **Módulo:** 2 — Prompt Engineering Básico (Aulas 05 a 08)  
-**Grupo:** [GABARITO DO PROFESSOR]  
+**Grupo:** Hanin Atwi – RM 567626  
 **Domínio:** E-commerce (TechStore Brasil)
 
 ---
