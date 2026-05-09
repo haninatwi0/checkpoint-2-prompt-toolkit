@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 """
 main.py — Prompt Toolkit: Ponto de Entrada
 Checkpoint 02 · FIAP · Ciência da Computação 2026
 Prof. Jorge Luiz Gomes
 
 Domínio: E-commerce (TechStore Brasil)
-Stack: Python 3.10+ · Ollama (gpt-oss:120b) · tiktoken · matplotlib · pandas
+Stack: Python 3.10+ · Ollama (qwen2.5:0.5b) · tiktoken · matplotlib · pandas
 
 Execução:
     python main.py           # Roda tudo (análise completa)
@@ -47,7 +48,7 @@ def executar_toolkit():
     print("=" * 70)
     print("🧰 PROMPT TOOLKIT — Checkpoint 02")
     print(f"🏢 Domínio: {DOMINIO}")
-    print(f"🤖 Stack: Ollama + gpt-oss:120b")
+    print(f"🤖 Stack: Ollama + qwen2.5:0.5b")
     print("=" * 70)
 
     # ── 1. Inicializar ──
@@ -56,7 +57,7 @@ def executar_toolkit():
     if not client.health_check():
         print("\n❌ Ollama não está rodando!")
         print("   Execute: ollama serve")
-        print("   E depois: ollama pull gpt-oss:120b")
+        print("   E depois: ollama pull qwen2.5:0.5b")
         sys.exit(1)
 
     print("✅ Ollama conectado!")

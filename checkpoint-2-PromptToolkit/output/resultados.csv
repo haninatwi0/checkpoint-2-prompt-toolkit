@@ -1,0 +1,128 @@
+﻿tarefa,tecnica,input_resumo,resposta_resumo,acuracia,tokens_prompt,tokens_resposta,tempo_ms
+classificacao_sentimento,Zero-Shot,"Notebook excelente! Tela linda, rápido e leve. Mel",POSITIVO,1.0,111,4,12884
+classificacao_sentimento,Zero-Shot,"Produto veio com defeito, a tela tem pixels mortos",NEGATIVO,1.0,114,4,6413
+classificacao_sentimento,Zero-Shot,"O design é bonito e a tela é boa, mas esquenta mui",NEGATIVO,0.0,122,4,7685
+classificacao_sentimento,Zero-Shot,"Faz o que promete, nada excepcional. Produto media",POSITIVO,0.0,109,4,18870
+classificacao_sentimento,Zero-Shot,Comprei para meu filho e ele adorou! Entrega rápid,POSITIVO,1.0,116,4,6421
+classificacao_sentimento,Few-Shot,"Notebook excelente! Tela linda, rápido e leve. Mel",POSITIVO,1.0,195,3,5958
+classificacao_sentimento,Few-Shot,"Produto veio com defeito, a tela tem pixels mortos",NEGATIVO,1.0,198,4,6126
+classificacao_sentimento,Few-Shot,"O design é bonito e a tela é boa, mas esquenta mui",NEGATIVO,0.0,206,4,6867
+classificacao_sentimento,Few-Shot,"Faz o que promete, nada excepcional. Produto media",POSITIVO,0.0,193,3,6376
+classificacao_sentimento,Few-Shot,Comprei para meu filho e ele adorou! Entrega rápid,POSITIVO,1.0,200,3,6024
+classificacao_sentimento,Chain-of-Thought,"Notebook excelente! Tela linda, rápido e leve. Mel",POSITIVO,1.0,200,4,12751
+classificacao_sentimento,Chain-of-Thought,"Produto veio com defeito, a tela tem pixels mortos",MISTO,0.0,203,4,17569
+classificacao_sentimento,Chain-of-Thought,"O design é bonito e a tela é boa, mas esquenta mui",MISTO,1.0,211,4,22307
+classificacao_sentimento,Chain-of-Thought,"Faz o que promete, nada excepcional. Produto media",POSITIVO,0.0,198,4,14106
+classificacao_sentimento,Chain-of-Thought,Comprei para meu filho e ele adorou! Entrega rápid,POSITIVO,1.0,205,4,10650
+classificacao_sentimento,Role Prompting,"Notebook excelente! Tela linda, rápido e leve. Mel",POSITIVO,1.0,213,4,6093
+classificacao_sentimento,Role Prompting,"Produto veio com defeito, a tela tem pixels mortos",MISTO,0.0,216,4,12472
+classificacao_sentimento,Role Prompting,"O design é bonito e a tela é boa, mas esquenta mui",POSITIVO,0.0,224,4,7597
+classificacao_sentimento,Role Prompting,"Faz o que promete, nada excepcional. Produto media",POSITIVO,0.0,211,4,18079
+classificacao_sentimento,Role Prompting,Comprei para meu filho e ele adorou! Entrega rápid,POSITIVO,1.0,218,4,23532
+extracao_reclamacao,Zero-Shot,O Notebook Dell Inspiron de R$3.500 veio com pixel,"```json
+{
+  ""produto"": ""Dell Inspiron"",
+  ""preco"": ""R$3.500"",
+  ""defeito"": ""pixe",0.5,149,53,33978
+extracao_reclamacao,Zero-Shot,Fone JBL Tune 510 de R$199 parou de funcionar em 3,"```json
+{
+  ""produto"": ""Fone JBL Tune 510"",
+  ""preco"": ""R$199"",
+  ""defeito"": ""Bo",0.5,151,57,14654
+extracao_reclamacao,Zero-Shot,A Cafeteira Nespresso Vertuo de R$899 vaza água pe,"```json
+{
+  ""produto"": ""Nespresso Vertuo"",
+  ""preco"": ""R$899"",
+  ""defeito"": ""A b",0.25,145,77,32446
+extracao_reclamacao,Zero-Shot,Smartphone Samsung A54 por R$1.800 — bateria não d,"```json
+{
+  ""produto"": ""Samsung A54"",
+  ""preco"": ""R$1.800"",
+  ""defeito"": ""bateri",0.25,148,57,24567
+extracao_reclamacao,Zero-Shot,Tênis Nike Air Max custou R$650 e a sola descolou ,"```json
+{
+  ""produto"": ""tênis Nike Air Max"",
+  ""preco"": ""R$650"",
+  ""defeito"": ""s",0.75,153,58,9121
+extracao_reclamacao,Few-Shot,O Notebook Dell Inspiron de R$3.500 veio com pixel,"{""produto"": """", ""preco"": """", ""defeito"": """", ""urgencia"": ""baixa""}",0.0,306,24,10033
+extracao_reclamacao,Few-Shot,Fone JBL Tune 510 de R$199 parou de funcionar em 3,"{""produto"": """", ""preco"": """", ""defeito"": """", ""urgência"": """"}",0.0,308,22,8144
+extracao_reclamacao,Few-Shot,A Cafeteira Nespresso Vertuo de R$899 vaza água pe,"{""produto"": """", ""preco"": """", ""defeito"": ""péssimo acabamento"", ""urgencia"": ""baixa",0.0,302,31,13789
+extracao_reclamacao,Few-Shot,Smartphone Samsung A54 por R$1.800 — bateria não d,"```json
+{
+  ""produto"": """",
+  ""preco"": """",
+  ""defeito"": ""não dura nem 4 horas"",
+ ",0.0,305,222,21240
+extracao_reclamacao,Few-Shot,Tênis Nike Air Max custou R$650 e a sola descolou ,"{""produto"": """", ""preco"": """", ""defeito"": """", ""urgência"": """"}",0.0,310,22,8920
+extracao_reclamacao,Chain-of-Thought,O Notebook Dell Inspiron de R$3.500 veio com pixel,"```json
+{
+  ""produto"": ""Dell Inspiron"",
+  ""preco"": ""R$3.500"",
+  ""defeito"": ""pixe",0.5,263,53,6205
+extracao_reclamacao,Chain-of-Thought,Fone JBL Tune 510 de R$199 parou de funcionar em 3,"```json
+{
+  ""produto"": ""JBL Tune 510"",
+  ""preco"": ""R$199.00"",
+  ""defeito"": ""Botã",0.25,265,58,6363
+extracao_reclamacao,Chain-of-Thought,A Cafeteira Nespresso Vertuo de R$899 vaza água pe,"```json
+{
+  ""produto"": ""Nespresso Vertuo"",
+  ""preco"": ""899"",
+  ""defeito"": ""Aqui ",0.75,259,79,7573
+extracao_reclamacao,Chain-of-Thought,Smartphone Samsung A54 por R$1.800 — bateria não d,"```json
+{
+  ""produto"": ""Samsung A54"",
+  ""preco"": ""R$1.800"",
+  ""defeito"": ""bateri",0.25,262,293,19466
+extracao_reclamacao,Chain-of-Thought,Tênis Nike Air Max custou R$650 e a sola descolou ,"```json
+{
+  ""produto"": ""tênis Nike Air Max"",
+  ""preco"": ""R$650"",
+  ""defeito"": ""s",0.75,267,58,6384
+extracao_reclamacao,Role Prompting,O Notebook Dell Inspiron de R$3.500 veio com pixel,"```json
+{
+  ""produto"": ""Notebook Dell Inspiron"",
+  ""preco"": null,
+  ""defeito"": """,0.5,251,47,5700
+extracao_reclamacao,Role Prompting,Fone JBL Tune 510 de R$199 parou de funcionar em 3,"```json
+{
+  ""produto"": ""fone JBL Tune 510"",
+  ""preco"": null,
+  ""defeito"": ""botão",0.25,253,52,5968
+extracao_reclamacao,Role Prompting,A Cafeteira Nespresso Vertuo de R$899 vaza água pe,"```json
+{
+  ""produto"": ""Nespresso Vertuo"",
+  ""preco"": null,
+  ""defeito"": ""A base",0.0,247,59,6403
+extracao_reclamacao,Role Prompting,Smartphone Samsung A54 por R$1.800 — bateria não d,"```json
+{
+  ""produto"": ""Smartphone Samsung A54"",
+  ""preco"": ""R$1.800"",
+  ""defeit",0.5,250,59,6403
+extracao_reclamacao,Role Prompting,Tênis Nike Air Max custou R$650 e a sola descolou ,"```json
+{
+  ""produto"": ""Tênis Nike Air Max"",
+  ""preco"": ""R$650"",
+  ""defeito"": ""S",0.5,255,58,6005
+geracao_descricao,Zero-Shot,"Notebook ProMax X15, Intel Core i7-13700H, 16GB DD",O Notebook ProMax X15 da TechStore Brasil é um ótimo investimento para quem busc,0.0,191,331,21527
+geracao_descricao,Zero-Shot,"Smart TV Samsung 55 polegadas 4K, HDR10+, Tizen OS",Bem-vindo à TechStore Brasil! Como a TechStore Brasil é o seu local para encontr,0.0,154,392,24707
+geracao_descricao,Zero-Shot,"Fone Bluetooth Sony WH-1000XM5, Cancelamento de Ru",O fone Bluetooth Sony WH-1000XM5 da TechStore Brasil é uma opção única para quem,0.0,155,152,11294
+geracao_descricao,Zero-Shot,"Mouse Logitech MX Master 3S, 8000 DPI, USB-C, Blue",Seja a melhor opção para desfrutar de uma jogada mais rápida com o Mouse Logitec,0.0,146,93,7886
+geracao_descricao,Zero-Shot,"Cadeira Gamer ThunderX3 EC3, reclinável 180 graus,","O TechStore Brasil está localizado na TechSpace, uma plataforma com mais de 1 mi",0.0,159,240,16270
+geracao_descricao,Few-Shot,"Notebook ProMax X15, Intel Core i7-13700H, 16GB DD","O TechStore Brasil é a escolha para você! Com a tecnologia mais recente, o Fone ",0.0,306,190,13750
+geracao_descricao,Few-Shot,"Smart TV Samsung 55 polegadas 4K, HDR10+, Tizen OS","Desculpe, mas não foram fornecidos as especificações técnicas para o produto sol",0.0,269,61,6185
+geracao_descricao,Few-Shot,"Fone Bluetooth Sony WH-1000XM5, Cancelamento de Ru","""O TechStore Brasil oferece os melhores fios Bluetooth com a tecnologia da Sony,",0.0,270,454,28261
+geracao_descricao,Few-Shot,"Mouse Logitech MX Master 3S, 8000 DPI, USB-C, Blue","""Descubra a diferença entre o melhor mouse para você e a TechStore Brasil com o ",0.0,261,308,20042
+geracao_descricao,Few-Shot,"Cadeira Gamer ThunderX3 EC3, reclinável 180 graus,","Mergulhe em aconchego confortável com o ThunderX3 EC3, uma ótima escolha para qu",0.0,274,240,16194
+geracao_descricao,Chain-of-Thought,"Notebook ProMax X15, Intel Core i7-13700H, 16GB DD","Desculpe, mas como assistente, não posso criar descrições digitais ou produzir c",0.0,286,82,7724
+geracao_descricao,Chain-of-Thought,"Smart TV Samsung 55 polegadas 4K, HDR10+, Tizen OS","Claro! Aqui está uma descrição atrativa para o Smart TV Samsung 55 polegadas 4K,",0.0,249,264,17690
+geracao_descricao,Chain-of-Thought,"Fone Bluetooth Sony WH-1000XM5, Cancelamento de Ru","Desculpe, mas como assistente, não tenho acesso aos detalhes técnicos específico",0.0,250,286,19038
+geracao_descricao,Chain-of-Thought,"Mouse Logitech MX Master 3S, 8000 DPI, USB-C, Blue","Essa é uma ótima ideia! Vamos fazer o gerenciamento de informações precisos:
+
+1.",0.0,241,500,31136
+geracao_descricao,Chain-of-Thought,"Cadeira Gamer ThunderX3 EC3, reclinável 180 graus,","Desculpe, mas como uma inteligência artificial, eu não tenho a capacidade de cri",0.0,254,95,8307
+geracao_descricao,Role Prompting,"Notebook ProMax X15, Intel Core i7-13700H, 16GB DD",O Notebook ProMax X15 da TechStore Brasil é uma opção incrível para quem gosta d,0.0,323,213,15270
+geracao_descricao,Role Prompting,"Smart TV Samsung 55 polegadas 4K, HDR10+, Tizen OS","O Smart TV Samsung 55 polegadas 4K, HDR10+, Tizen OS traz a tecnologia de maior ",0.0,286,120,9424
+geracao_descricao,Role Prompting,"Fone Bluetooth Sony WH-1000XM5, Cancelamento de Ru",O fone Bluetooth Sony WH-1000XM5 da TechStore Brasil é o seu escolhido! Ele comb,0.0,287,119,9477
+geracao_descricao,Role Prompting,"Mouse Logitech MX Master 3S, 8000 DPI, USB-C, Blue",O Mouse Logitech MX Master 3S é um inovador modelo aprimorado para sua tecnologi,0.0,278,138,10597
+geracao_descricao,Role Prompting,"Cadeira Gamer ThunderX3 EC3, reclinável 180 graus,",O TechStore Brasil desempenha um papel crucial na escolha dos equipamentos tecno,0.0,291,167,12160
