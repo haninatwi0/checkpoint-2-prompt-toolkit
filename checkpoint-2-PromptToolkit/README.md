@@ -4,126 +4,112 @@
 **Instituição:** FIAP — Ciência da Computação 2026  
 **Professor:** Jorge Luiz Gomes  
 **Módulo:** 2 — Prompt Engineering Básico (Aulas 05 a 08)  
-**Grupo:** [GABARITO DO PROFESSOR]  
+**Grupo:** Hanin Atwi 567626  
 **Domínio:** E-commerce (TechStore Brasil)
 
 ---
 
-## 📋 Sobre o Projeto
+## 1. Introdução
 
-O **Prompt Toolkit** é uma ferramenta Python que aplica automaticamente 4 técnicas de Prompt Engineering a tarefas de negócio, compara resultados e recomenda a melhor abordagem.
+O objetivo principal é analisar e comparar diferentes técnicas de engenharia de prompts aplicadas a tarefas de Processamento de Linguagem Natural (NLP), utilizando um modelo de linguagem executado localmente por meio do Ollama.
 
-### Problema Resolvido
-
-A TechStore Brasil recebe centenas de reviews e reclamações diariamente. Hoje, a análise é manual. Este toolkit automatiza a escolha da melhor técnica de prompting para cada tipo de tarefa (classificação, extração, geração).
+O cenário utilizado é um e-commerce fictício chamado **TechStore Brasil**, especializado na venda de produtos de tecnologia.
 
 ---
 
-## 🏗️ Arquitetura
+## 2. Objetivo do Projeto
 
-```
-inputs.json → prompt_builder → techniques (ZS/FS/CoT/Role) → llm_client (Ollama) → evaluator → report → output/
-```
+O projeto busca responder às seguintes perguntas:
 
-```
-prompt-toolkit/
-├── main.py                    # Ponto de entrada
-├── requirements.txt           # Dependências
-├── .env.example               # Variáveis de ambiente
-├── src/
-│   ├── llm_client.py          # Conexão Ollama API (Aula 05)
-│   ├── prompt_builder.py      # Montar prompts por anatomia (Aula 05)
-│   ├── techniques.py          # 4 técnicas: ZS, FS, CoT, Role (Aulas 06+07)
-│   ├── tasks.py               # 3 tarefas do domínio (Aula 08)
-│   ├── evaluator.py           # Métricas + temperatura
-│   └── report.py              # Tabelas pandas + gráficos matplotlib
-├── data/
-│   └── inputs.json            # 5 inputs reais por tarefa
-├── prompts/
-│   └── system_prompts.json    # 2 personas detalhadas
-├── output/
-│   ├── resultados.csv         # Resultados da execução
-│   └── graficos/              # PNGs dos gráficos
-└── docs/
-    └── CP02_Gabarito.pdf      # Documentação
-```
+- Qual técnica de prompting gera os melhores resultados?
+- Qual técnica utiliza menos tokens?
+- Qual técnica apresenta maior consistência em diferentes temperaturas?
+- Qual é o melhor equilíbrio entre custo e desempenho?
+
+Para isso, foram comparadas diferentes estratégias de prompting em três tarefas distintas.
 
 ---
 
-## ⚙️ Stack Técnica
+## 3. Tarefas Avaliadas
 
-| Tecnologia | Uso | Versão |
-|---|---|---|
-| Python | Linguagem | 3.10+ |
-| Ollama | LLM local | gpt-oss:120b |
-| requests | Chamadas REST API | 2.31+ |
-| tiktoken | Contagem de tokens | 0.7+ |
-| pandas | Tabelas e análise | 2.1+ |
-| matplotlib | Gráficos | 3.8+ |
-| python-dotenv | Variáveis de ambiente | 1.0+ |
+### 3.1 Classificação de Sentimento
 
----
+O modelo recebe avaliações de clientes e deve classificá-las como:
 
-## 🚀 Como Executar
+- Positivo
+- Negativo
+- Neutro
 
-### 1. Pré-requisitos
-
-- Python 3.10+
-- Ollama instalado e rodando com o modelo `gpt-oss:120b`
-
-```bash
-# Instalar Ollama: https://ollama.com
-ollama pull gpt-oss:120b
-ollama serve
-```
-
-### 2. Instalar dependências
-
-```bash
-cd prompt-toolkit
-pip install -r requirements.txt
-```
-
-### 3. Configurar ambiente
-
-```bash
-cp .env.example .env
-# Editar .env se o Ollama não estiver em localhost:11434
-```
-
-### 4. Executar
-
-```bash
-python main.py
-```
-
-### 5. Resultados
-
-- `output/resultados.csv` — Tabela completa
-- `output/graficos/acuracia_por_tecnica.png` — Gráfico de acurácia
-- `output/graficos/custo_por_tecnica.png` — Gráfico de custo (tokens)
-- `output/graficos/temperatura_consistencia.png` — Gráfico de temperatura
+**Exemplo:**  
+"Entrega rápida e produto excelente." → Positivo
 
 ---
 
-## 📊 Técnicas Implementadas
+### 3.2 Extração de Reclamações
 
-| Técnica | Aula | Descrição |
-|---|---|---|
-| **Zero-Shot** | 06 | Prompt direto sem exemplos |
-| **Few-Shot** | 06 | Prompt com 2-3 exemplos do domínio |
-| **Chain-of-Thought** | 06 | Raciocínio passo a passo explícito |
-| **Role Prompting** | 07 | Persona especialista via system prompt |
+O modelo deve identificar o principal problema mencionado pelo cliente.
 
-## 📋 Tarefas do Domínio (Aula 08)
-
-| Tarefa | Tipo | Descrição |
-|---|---|---|
-| Classificação de Sentimento | classificação | Classificar reviews como POSITIVO/NEGATIVO/NEUTRO/MISTO |
-| Extração de Reclamações | extração | Extrair produto, preço, defeito e urgência em JSON |
-| Geração de Descrições | geração | Criar descrição de venda a partir de specs técnicas |
+**Exemplo:**  
+"O notebook chegou com a tela quebrada." → Tela quebrada
 
 ---
+
+### 3.3 Geração de Descrição de Produtos
+
+O modelo recebe características de um produto e deve gerar uma descrição comercial atrativa.
+
+**Exemplo:**  
+"Mouse gamer RGB com 7 botões programáveis." → descrição de marketing.
+
+---
+
+## 4. Técnicas de Prompting Utilizadas
+
+### Zero-Shot
+
+O modelo recebe apenas a instrução da tarefa, sem exemplos.
+
+### Few-Shot
+
+O prompt inclui exemplos de entrada e saída.
+
+### Chain-of-Thought (CoT)
+
+O modelo é instruído a raciocinar passo a passo antes de responder.
+
+### Role Prompting
+
+O modelo assume um papel específico, como especialista em atendimento ao cliente ou marketing.
+
+---
+
+## 5. Tecnologias Utilizadas
+
+- Python 3
+- Ollama
+- Modelo `qwen2.5:0.5b`
+- Requests
+- Pandas
+- Matplotlib
+- Tiktoken
+- Python-dotenv
+
+---
+
+## 6. Estrutura do Projeto
+
+```text
+checkpoint-2-PromptToolkit/
+├── data/                      # Dados de entrada para testes
+├── prompts/                   # Templates de prompts
+├── src/                       # Código-fonte do projeto
+├── output/                    # Resultados gerados
+│   └── graficos/
+├── .env.example               # Exemplo de configuração
+├── README.md                  # Documentação do projeto
+├── main.py                    # Arquivo principal
+└── requirements.txt           # Dependências Python
+````
 
 ## 📚 Referências
 
@@ -136,3 +122,8 @@ python main.py
 - OpenAI Prompt Engineering Guide
 - Anthropic Claude Prompt Guide
 - promptingguide.ai/pt
+https://ollama.com
+https://www.python.org
+https://pandas.pydata.org
+https://matplotlib.org
+https://platform.openai.com/tokenizer
